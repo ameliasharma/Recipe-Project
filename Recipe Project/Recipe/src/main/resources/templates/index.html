@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+    <link href="/webjars/bootstrap/4.5.0/css/bootstrap.css" rel="stylesheet" />
+    <script type="text/javascript" src="/webjars/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/webjars/jquery/3.5.1/jquery.min.js"></script>
+
+
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Hola Amigos!!</h2>
+
+<table class="table table-stripped">
+    <tr>
+        <td>ID</td>
+        <td>Description</td>
+        <td>View</td>
+        <td>Delete</td>
+        <td>Edit</td>
+        <td><a href="www.google.com" th:href="@{'/createnew'}">Create New</a></td>
+    </tr>
+
+    <tr th:each="recipe: ${recipes}">
+        <td th:text="${recipe.id}">sahil</td>
+        <td th:text="${recipe.description}">Amelia</td>
+        <td><a href="www.google.com" th:href="@{'show/'+${recipe.id}}">View</a></td>
+        <td><a href="www.google.com" th:href="@{'delete/'+${recipe.id}}">Delete</a></td>
+
+        <td><a href="www.google.com" th:href="@{'edit/'+${recipe.id}}">Edit</a></td>
+    </tr>
+
+</table>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

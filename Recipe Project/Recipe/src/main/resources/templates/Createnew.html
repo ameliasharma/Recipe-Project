@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Recipe Form</title>
+
+
+    <link href="/webjars/bootstrap/4.5.0/css/bootstrap.css" rel="stylesheet" />
+    <script type="text/javascript" src="/webjars/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/webjars/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+<body>
+<!--/*@thymesVar id="recipe" type="com.sahil.Recipe"*/-->
+<div class="container-fluid" style="margin-top: 20px">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <form  th:object="${recipe}" th:action="@{/createnew}" method="post">
+                <input type="hidden" th:field="*{id}"/>
+           <h2>Description</h2>
+                <input type="text" class="form-control" th:field="*{description}"/>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
